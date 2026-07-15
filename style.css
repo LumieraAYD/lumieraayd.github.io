@@ -40,7 +40,23 @@ header{
 
 }
 
-nav{
+.navbar{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
 
     width:90%;
 
@@ -64,7 +80,17 @@ nav{
 
 }
 
-nav ul{
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:40px;
+
+}
 
     display:flex;
 
@@ -74,7 +100,19 @@ nav ul{
 
 }
 
-nav a{
+.menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+}
 
     color:white;
 
