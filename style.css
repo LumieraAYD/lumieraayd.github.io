@@ -343,11 +343,7 @@ height:55px;
 
 .hamburguesa{
 
-display:block;
-
-font-size:32px;
-
-cursor:pointer;
+    display:flex;
 
 }
 
