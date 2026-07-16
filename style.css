@@ -425,6 +425,94 @@ header{
 
 }
 
+/* ==========================================
+   CABECERA CATEGORÍA
+========================================== */
+
+.cabecera-categoria{
+
+    position:relative;
+
+    width:100%;
+
+    height:500px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.cabecera-categoria img{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.cabecera-texto{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    width:90%;
+
+    max-width:900px;
+
+}
+
+.cabecera-texto span{
+
+    color:#E4C27A;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+}
+
+.cabecera-texto h1{
+
+    font-family:var(--fuente-titulo);
+
+    font-size:70px;
+
+    margin:25px 0;
+
+}
+
+.cabecera-texto p{
+
+    font-size:20px;
+
+    line-height:34px;
+
+}
+
 /* ===== SECCIONES ===== */
 
 section{
