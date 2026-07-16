@@ -261,7 +261,51 @@ section{
 
 /* ===== RESPONSIVE ===== */
 
-@media(max-width:900px){
+@media (max-width:900px){
+
+    .navbar{
+
+        height:90px;
+
+    }
+
+    .menu{
+
+        display:none;
+
+    }
+
+    .btn-menu{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+
+        padding-top:120px;
+
+    }
+
+    .hero-texto h1{
+
+        font-size:48px;
+
+    }
+
+    .logo img{
+
+        height:55px;
+
+    }
+
+}
 
 .navbar{
 
