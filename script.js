@@ -1,64 +1,65 @@
+// ======================================
+// LUMIERA
+// JavaScript principal
+// ======================================
+
 // ===============================
-// MENÚ HAMBURGUESA LUMIERA
+// MENÚ HAMBURGUESA
 // ===============================
 
 const hamburguesa = document.querySelector(".hamburguesa");
 const menu = document.querySelector(".menu");
 
-// Abrir y cerrar menú
+if (hamburguesa && menu) {
 
-hamburguesa.addEventListener("click", () => {
+    hamburguesa.addEventListener("click", () => {
 
-    menu.classList.toggle("activo");
-
-});
-
-// Cerrar al pulsar un enlace
-
-document.querySelectorAll(".menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menu.classList.remove("activo");
+        menu.classList.toggle("activo");
 
     });
 
-     });
+    document.querySelectorAll(".menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menu.classList.remove("activo");
+
+        });
+
+    });
+
+}
 
 // ===============================
 // MODAL PRODUCTO
 // ===============================
 
-const modal = document.querySelector("#modalProducto");
-
+const modal = document.getElementById("modalProducto");
 const abrirModal = document.querySelector(".overlay-producto");
-
 const cerrarModal = document.querySelector(".cerrar-modal");
 
-// Abrir
+if (modal && abrirModal && cerrarModal) {
 
-abrirModal.addEventListener("click", () => {
+    abrirModal.addEventListener("click", () => {
 
-    modal.classList.add("activo");
+        modal.classList.add("activo");
 
-});
+    });
 
-// Cerrar con la X
-
-cerrarModal.addEventListener("click", () => {
-
-    modal.classList.remove("activo");
-
-});
-
-// Cerrar haciendo clic fuera
-
-modal.addEventListener("click", (e) => {
-
-    if(e.target === modal){
+    cerrarModal.addEventListener("click", () => {
 
         modal.classList.remove("activo");
 
-    }
+    });
 
-});
+    modal.addEventListener("click", (e) => {
+
+        if (e.target === modal) {
+
+            modal.classList.remove("activo");
+
+        }
+
+    });
+
+}
