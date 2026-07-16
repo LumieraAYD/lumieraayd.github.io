@@ -352,37 +352,3 @@ cursor:pointer;
 }
 
 }
-
-.navbar{
-
-flex-direction:column;
-
-height:auto;
-
-padding:20px;
-
-}
-
-.menu{
-
-flex-direction:column;
-
-margin:20px 0;
-
-}
-
-.hero{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.hero-texto h1{
-
-font-size:48px;
-
-}
-
-}
