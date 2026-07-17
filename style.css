@@ -767,6 +767,18 @@ height:55px;
     font-size:40px;
 
 }
+
+.grid-catalogo{
+
+    grid-template-columns:1fr;
+
+}
+
+.card-producto img{
+
+    height:320px;
+
+}
 }
 
 /* ==========================================
