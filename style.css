@@ -654,179 +654,7 @@ section{
 
 }
 
-/* ===== RESPONSIVE ===== */
 
-@media (max-width:900px){
-
-    .navbar{
-
-        height:90px;
-
-    }
-
-   .menu{
-
-    position:fixed;
-
-    top:90px;
-
-    right:-100%;
-
-    width:80%;
-
-    height:calc(100vh - 90px);
-
-    background:var(--color-blanco);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    padding:40px;
-
-    gap:35px;
-
-    transition:right .35s ease;
-
-    box-shadow:-10px 0 25px rgba(0,0,0,.12);
-
-}
-
-   .menu.activo{
-
-    right:0;
-
-}
-
-    .btn-menu{
-
-        display:none;
-
-    }
-
-    .hero{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-        gap:40px;
-
-        padding-top:120px;
-
-    }
-
-    .hero-texto h1{
-
-        font-size:48px;
-
-    }
-
-.logo img{
-
-height:55px;
-
-}
-
-.hamburguesa{
-
-    display:flex;
-
-}
-
- .hero-botones{
-
-    flex-direction:column;
-
-}
-
-.hero-valores{
-
-    grid-template-columns:1fr;
-
-    text-align:left;
-
-}  
-
-.grid-colecciones{
-
-    grid-template-columns:1fr;
-
-}
-
-.card-coleccion img{
-
-    height:320px;
-
-}
-
-.titulo-seccion h2{
-
-    font-size:40px;
-
-}
-
-.grid-catalogo{
-
-    grid-template-columns:1fr;
-
-}
-
-.card-producto img{
-
-    height:320px;
-
-}
-
-.grid-catalogo{
-
-    grid-template-columns:1fr;
-
-}
-
-.card-producto{
-
-    width:100%;
-
-}
-
-.card-producto img{
-
-    height:320px;
-
-}
-
-.overlay-producto{
-
-    opacity:1;
-
-    justify-content:flex-end;
-
-    padding-bottom:30px;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.15),
-        transparent
-    );
-
-}
-
-.overlay-producto h3{
-
-    font-size:28px;
-
-}
-
-.overlay-producto span{
-
-    margin-top:10px;
-
-}
-}
 
 /* ==========================================
    CATÁLOGO BABY SHOWER
@@ -1110,4 +938,166 @@ height:55px;
 
     }
 
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:900px){
+
+    .navbar{
+
+        height:90px;
+
+    }
+
+   .menu{
+
+    position:fixed;
+
+    top:90px;
+
+    right:-100%;
+
+    width:80%;
+
+    height:calc(100vh - 90px);
+
+    background:var(--color-blanco);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:40px;
+
+    gap:35px;
+
+    transition:right .35s ease;
+
+    box-shadow:-10px 0 25px rgba(0,0,0,.12);
+
+}
+
+   .menu.activo{
+
+    right:0;
+
+}
+
+    .btn-menu{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+
+        padding-top:120px;
+
+    }
+
+    .hero-texto h1{
+
+        font-size:48px;
+
+    }
+
+.logo img{
+
+height:55px;
+
+}
+
+.hamburguesa{
+
+    display:flex;
+
+}
+
+ .hero-botones{
+
+    flex-direction:column;
+
+}
+
+.hero-valores{
+
+    grid-template-columns:1fr;
+
+    text-align:left;
+
+}  
+
+.grid-colecciones{
+
+    grid-template-columns:1fr;
+
+}
+
+.card-coleccion img{
+
+    height:320px;
+
+}
+
+.titulo-seccion h2{
+
+    font-size:40px;
+
+}
+
+.grid-catalogo{
+
+    grid-template-columns:1fr;
+
+}
+
+.card-producto img{
+
+    height:320px;
+
+}
+
+.card-producto{
+
+    width:100%;
+
+}
+
+.overlay-producto{
+
+    opacity:1;
+
+    justify-content:flex-end;
+
+    padding-bottom:30px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.15),
+        transparent
+    );
+
+}
+
+.overlay-producto h3{
+
+    font-size:28px;
+
+}
+
+.overlay-producto span{
+
+    margin-top:10px;
+
+}
 }
