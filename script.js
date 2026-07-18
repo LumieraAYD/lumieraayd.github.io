@@ -59,8 +59,8 @@ tarjetas.forEach(tarjeta => {
         modalPrecio.textContent = tarjeta.dataset.precio;
 
         modalLista.innerHTML = `
-            <li>✔ Personalizable en color y aroma</li>
-            <li>✔  Disponible con tul o caja de regalo.</li>
+            <li>✔ Personalizable en color y aroma.</li>
+            <li>✔  Disponible con tull, caja de regalo o backing card.</li>
         `;
 
         modal.classList.add("activo");
