@@ -987,11 +987,38 @@ section{
 
 }
 
+.card-red:hover .icono-red{
+
+    background:var(--color-dorado);
+
+    color:white;
+
+    transform:scale(1.08);
+
+}
+
 .icono-red{
 
-    font-size:48px;
+    width:90px;
+    height:90px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
     color:var(--color-dorado);
-    margin-bottom:25px;
+
+    transition:.35s;
 
 }
 
