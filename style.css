@@ -1317,6 +1317,94 @@ section{
     line-height:30px;
 
 }
+
+/*=========================
+GALERÍA DEL MODAL
+=========================*/
+
+.galeria-modal{
+
+    position:relative;
+
+}
+
+.galeria-modal img{
+
+    width:100%;
+    border-radius:20px;
+    display:block;
+
+}
+
+.flecha{
+
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    cursor:pointer;
+    font-size:28px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.flecha:hover{
+
+    background:white;
+    transform:translateY(-50%) scale(1.08);
+
+}
+
+.flecha-izquierda{
+
+    left:18px;
+
+}
+
+.flecha-derecha{
+
+    right:18px;
+
+}
+
+.miniaturas{
+
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:20px 0 30px;
+    flex-wrap:wrap;
+
+}
+
+.miniaturas img{
+
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:12px;
+    cursor:pointer;
+    border:3px solid transparent;
+    transition:.3s;
+
+}
+
+.miniaturas img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.miniaturas img.activa{
+
+    border-color:var(--color-dorado);
+
+}
 /* ===== RESPONSIVE ===== */
 
 @media (max-width:900px){
@@ -1475,6 +1563,21 @@ height:55px;
 .overlay-producto span{
 
     margin-top:10px;
+
+}
+
+.flecha{
+
+    width:40px;
+    height:40px;
+    font-size:22px;
+
+}
+
+.miniaturas img{
+
+    width:60px;
+    height:60px;
 
 }
 
