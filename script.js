@@ -35,9 +35,7 @@ if (hamburguesa && menu) {
 // ===============================
 
 const modal = document.querySelector("#modalProducto");
-
 const cerrarModal = document.querySelector(".cerrar-modal");
-
 const tarjetas = document.querySelectorAll(".card-producto");
 
 const modalImagen = document.querySelector("#modalImagen");
@@ -46,74 +44,37 @@ const modalDescripcion = document.querySelector("#modalDescripcion");
 const modalLista = document.querySelector("#modalLista");
 const modalPrecio = document.querySelector("#modalPrecio");
 
-// ===============================
-// GALERÍA DEL MODAL
-// ===============================
-
 const miniaturas = document.querySelector("#miniaturas");
-
 const flechaIzquierda = document.querySelector(".flecha-izquierda");
-
 const flechaDerecha = document.querySelector(".flecha-derecha");
 
 let imagenes = [];
-
 let imagenActual = 0;
 
-// Swipe móvil
-
-let inicioX = 0;
-
-let finX = 0;
+// ===============================
+// ABRIR MODAL
+// ===============================
 
 tarjetas.forEach(tarjeta => {
 
     tarjeta.addEventListener("click", () => {
 
-imagenes = tarjeta.dataset.imagenes.split(",");
+        imagenes = tarjeta.dataset.imagenes.split(",");
 
-imagenActual = 0;
+        imagenActual = 0;
 
-modalImagen.src = imagenes[imagenActual];
-
-miniaturas.innerHTML = "";
-
-imagenes.forEach((imagen, indice)=>{
-
-    const mini = document.createElement("img");
-
-    mini.src = imagen;
-
-    if(indice === 0){
-
-        mini.classList.add("activa");
-
-    }
-
-mini.addEventListener("click", ()=>{
-
-    imagenActual = indice;
-
-    modalImagen.src = imagenes[imagenActual];
-
-    actualizarMiniaturas();
-
-});
-
-    miniaturas.appendChild(mini);
-
-});
+        modalImagen.src = imagenes[0];
 
         modalTitulo.textContent = tarjeta.dataset.nombre;
-
         modalDescripcion.textContent = tarjeta.dataset.descripcion;
-
         modalPrecio.textContent = tarjeta.dataset.precio;
 
         modalLista.innerHTML = `
             <li>✔ Personalizable en color y aroma.</li>
-            <li>✔  Disponible con tull, caja de regalo o backing card personalizable.</li>
+            <li>✔ Disponible con tull, caja de regalo o backing card personalizable.</li>
         `;
+
+        crearMiniaturas();
 
         modal.classList.add("activo");
 
@@ -122,60 +83,54 @@ mini.addEventListener("click", ()=>{
 });
 
 // ===============================
-// FLECHA DERECHA
+// MINIATURAS
 // ===============================
 
-flechaDerecha.addEventListener("click",(e)=>{
+function crearMiniaturas(){
 
-    e.stopPropagation();
+    miniaturas.innerHTML = "";
 
-    siguienteImagen();
+    imagenes.forEach((imagen, indice)=>{
 
-});
+        const mini = document.createElement("img");
 
-    e.stopPropagation();
+        mini.src = imagen;
 
-    imagenActual++;
+        if(indice === imagenActual){
 
-    if(imagenActual >= imagenes.length){
+            mini.classList.add("activa");
 
-        imagenActual = 0;
+        }
 
-    }
+        mini.addEventListener("click",()=>{
 
-    modalImagen.src = imagenes[imagenActual];
+            imagenActual = indice;
 
-    actualizarMiniaturas();
+            modalImagen.src = imagenes[imagenActual];
 
-});
+            actualizarMiniaturas();
+
+        });
+
+        miniaturas.appendChild(mini);
+
+    });
+
+}
+
+function actualizarMiniaturas(){
+
+    document.querySelectorAll(".miniaturas img").forEach((img, indice)=>{
+
+        img.classList.toggle("activa", indice === imagenActual);
+
+    });
+
+}
 
 // ===============================
-// FLECHA IZQUIERDA
+// CAMBIAR IMAGEN
 // ===============================
-
-flechaIzquierda.addEventListener("click",(e)=>{
-
-    e.stopPropagation();
-
-    anteriorImagen();
-
-});
-
-    e.stopPropagation();
-
-    imagenActual--;
-
-    if(imagenActual < 0){
-
-        imagenActual = imagenes.length-1;
-
-    }
-
-    modalImagen.src = imagenes[imagenActual];
-
-    actualizarMiniaturas();
-
-});
 
 function siguienteImagen(){
 
@@ -199,7 +154,7 @@ function anteriorImagen(){
 
     if(imagenActual < 0){
 
-        imagenActual = imagenes.length-1;
+        imagenActual = imagenes.length - 1;
 
     }
 
@@ -210,52 +165,41 @@ function anteriorImagen(){
 }
 
 // ===============================
-// ACTUALIZAR MINIATURAS
+// FLECHAS
 // ===============================
 
-function actualizarMiniaturas(){
+flechaDerecha.addEventListener("click",(e)=>{
 
-    document.querySelectorAll(".miniaturas img").forEach((img, indice)=>{
+    e.stopPropagation();
 
-        img.classList.toggle("activa", indice===imagenActual);
-
-    });
-
-}
-
-cerrarModal.addEventListener("click", () => {
-
-    modal.classList.remove("activo");
+    siguienteImagen();
 
 });
 
-modal.addEventListener("click", (e) => {
+flechaIzquierda.addEventListener("click",(e)=>{
 
-    if(e.target === modal){
+    e.stopPropagation();
 
-        modal.classList.remove("activo");
+    anteriorImagen();
 
-    }
-    
-    // ===============================
-// SWIPE EN CELULAR
+});
+
+// ===============================
+// SWIPE
 // ===============================
 
-modalImagen.addEventListener("touchstart", (e)=>{
+let inicioX = 0;
+let finX = 0;
+
+modalImagen.addEventListener("touchstart",(e)=>{
 
     inicioX = e.changedTouches[0].screenX;
 
 });
 
-modalImagen.addEventListener("touchend", (e)=>{
+modalImagen.addEventListener("touchend",(e)=>{
 
     finX = e.changedTouches[0].screenX;
-
-    manejarSwipe();
-
-});
-
-function manejarSwipe(){
 
     if(inicioX - finX > 50){
 
@@ -269,6 +213,24 @@ function manejarSwipe(){
 
     }
 
-}
+});
+
+// ===============================
+// CERRAR MODAL
+// ===============================
+
+cerrarModal.addEventListener("click",()=>{
+
+    modal.classList.remove("activo");
+
+});
+
+modal.addEventListener("click",(e)=>{
+
+    if(e.target === modal){
+
+        modal.classList.remove("activo");
+
+    }
 
 });
