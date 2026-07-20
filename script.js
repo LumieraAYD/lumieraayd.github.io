@@ -44,10 +44,6 @@ const modalDescripcion = document.querySelector("#modalDescripcion");
 const modalLista = document.querySelector("#modalLista");
 const modalPrecio = document.querySelector("#modalPrecio");
 
-const miniaturas = document.querySelector("#miniaturas");
-const flechaIzquierda = document.querySelector(".flecha-izquierda");
-const flechaDerecha = document.querySelector(".flecha-derecha");
-
 let imagenes = [];
 let imagenActual = 0;
 
@@ -82,146 +78,12 @@ if (tarjeta.dataset.imagenes) {
             <li>✔ Disponible con tull, caja de regalo o backing card personalizable.</li>
         `;
 
-        crearMiniaturas();
-
         modal.classList.add("activo");
 
     });
 
 });
 
-// ===============================
-// MINIATURAS
-// ===============================
-
-function crearMiniaturas(){
-
-    miniaturas.innerHTML = "";
-
-    imagenes.forEach((imagen, indice)=>{
-
-        const mini = document.createElement("img");
-
-        mini.src = imagen;
-
-        if(indice === imagenActual){
-
-            mini.classList.add("activa");
-
-        }
-
-        mini.addEventListener("click",()=>{
-
-            imagenActual = indice;
-
-            modalImagen.src = imagenes[imagenActual];
-
-            actualizarMiniaturas();
-
-        });
-
-        miniaturas.appendChild(mini);
-
-    });
-
-}
-
-function actualizarMiniaturas(){
-
-    document.querySelectorAll(".miniaturas img").forEach((img, indice)=>{
-
-        img.classList.toggle("activa", indice === imagenActual);
-
-    });
-
-}
-
-// ===============================
-// CAMBIAR IMAGEN
-// ===============================
-
-function siguienteImagen(){
-
-    imagenActual++;
-
-    if(imagenActual >= imagenes.length){
-
-        imagenActual = 0;
-
-    }
-
-    modalImagen.src = imagenes[imagenActual];
-
-    actualizarMiniaturas();
-
-}
-
-function anteriorImagen(){
-
-    imagenActual--;
-
-    if(imagenActual < 0){
-
-        imagenActual = imagenes.length - 1;
-
-    }
-
-    modalImagen.src = imagenes[imagenActual];
-
-    actualizarMiniaturas();
-
-}
-
-// ===============================
-// FLECHAS
-// ===============================
-
-flechaDerecha.addEventListener("click",(e)=>{
-
-    e.stopPropagation();
-
-    siguienteImagen();
-
-});
-
-flechaIzquierda.addEventListener("click",(e)=>{
-
-    e.stopPropagation();
-
-    anteriorImagen();
-
-});
-
-// ===============================
-// SWIPE
-// ===============================
-
-let inicioX = 0;
-let finX = 0;
-
-modalImagen.addEventListener("touchstart",(e)=>{
-
-    inicioX = e.changedTouches[0].screenX;
-
-});
-
-modalImagen.addEventListener("touchend",(e)=>{
-
-    finX = e.changedTouches[0].screenX;
-
-    if(inicioX - finX > 50){
-
-        siguienteImagen();
-
-    }
-
-    if(finX - inicioX > 50){
-
-        anteriorImagen();
-
-    }
-
-});
 
 // ===============================
 // CERRAR MODAL
