@@ -1454,7 +1454,7 @@ FRAGANCIAS MODAL
 .titulo-aromas{
 
     display:block;
-    font-family:var(--fuente-principal);
+    font-family:var(--fuente-titulo);
     font-size:18px;
     color:var(--color-dorado);
     margin-bottom:10px;
@@ -1525,7 +1525,7 @@ AROMAS
 
 .categoria-aroma h3{
 
-    font-family:var(--fuente-principal);
+    font-family:var(--fuente-titulo);
     color:var(--color-dorado);
     font-size:28px;
     margin-bottom:18px;
