@@ -1749,11 +1749,11 @@ AROMAS
 
 .categoria-aroma{
 
-    background:red !important;
-    padding:30px !important;
-    border-radius:18px !important;
-    border:5px solid blue !important;
-    display:block !important;
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.35s;
 
 }
 
